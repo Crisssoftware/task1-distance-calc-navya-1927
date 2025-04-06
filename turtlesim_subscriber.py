@@ -6,7 +6,7 @@ class turtlesimSubscriber(Node):
 		super().__init__('turtlesim_subscriber')
 		self.subscription=self.create_subscription(Pose,/turtle1/pose,self.listener_callback,10)
 	def listener_callback(self,msg):
-		x,y=msg.x,msg,y
+		x,y=msg.x,msg.y
 		dist=(x**2+y**2)**0.5
 		self.get_logger().info(f'Distance of Turtle from Origin: {dist}')
 def main(args=None):
